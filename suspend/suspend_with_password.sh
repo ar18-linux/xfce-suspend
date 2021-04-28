@@ -4,7 +4,7 @@
 function run() {
   kill "$(pidof xfce4-power-manager-settings)" &
   wait $!
-  xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lock-screen-suspend-hibernate -s true &
+  xfconf-query -n -t bool -c xfce4-power-manager -p /xfce4-power-manager/lock-screen-suspend-hibernate -s true &
   wait $!
   xfce4-power-manager -c &
   wait $!
